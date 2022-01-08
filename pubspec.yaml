@@ -6,7 +6,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  flutter_blue: ^0.7.2
+  flutter_blue: ^0.8.0
   flutter:
     sdk: flutter
 

@@ -28,6 +28,7 @@ class FlutterBlueApp extends StatelessWidget {
             }
             return BluetoothOffScreen(state: state);
           }),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -54,7 +55,7 @@ class BluetoothOffScreen extends StatelessWidget {
               'Bluetooth Adapter is ${state != null ? state.toString().substring(15) : 'not available'}.',
               style: Theme.of(context)
                   .primaryTextTheme
-                  .subhead
+                  .bodyText1
                   .copyWith(color: Colors.white),
             ),
           ],

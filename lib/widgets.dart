@@ -178,6 +178,16 @@ class CharacteristicTile extends StatelessWidget {
       initialData: characteristic.lastValue,
       builder: (c, snapshot) {
         final value = snapshot.data;
+        String sValue="";
+
+        if(snapshot.data.length > 0)
+          sValue = " - ";
+        else
+          sValue = "";
+        for(int c in snapshot.data){
+          sValue += String.fromCharCode(c);
+        }
+
         return ExpansionTile(
           title: ListTile(
             title: Column(
@@ -191,7 +201,7 @@ class CharacteristicTile extends StatelessWidget {
                         color: Theme.of(context).textTheme.caption.color))
               ],
             ),
-            subtitle: Text(value.toString()),
+            subtitle: Text(value.toString() + sValue),
             contentPadding: EdgeInsets.all(0.0),
           ),
           trailing: Row(
